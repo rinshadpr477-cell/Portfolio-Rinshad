@@ -45,7 +45,7 @@ function Projects() {
       description:
         "Interactive resume builder with live preview, customizable sections, and downloadable professional resume templates.",
       techs: ["React", "Forms", "State Management"],
-      live: "https://resume-builder-frontend-teal.vercel.app/",
+      live: "https://resume-builder-frontend-l6dr.vercel.app/",
       github: "#",
     },
 
