@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Subdued, Comfortable Light Theme - Soft Apple Neutral (No Glare) */
+  :root {
+    --bg-page: #EAEAEF;
+    --surface-1: #F6F6F9;
+    --surface-2: #DFDFE5;
+    --surface-card: #F6F6F9;
+    --border-subtle: rgba(0, 0, 0, 0.09);
+    --border-hover: rgba(94, 92, 230, 0.45);
+    --text-primary: #18181B;
+    --text-muted: #55555C;
+    --accent: #5E5CE6;
+    --accent-silver: #71717A;
+    --accent-glow: rgba(94, 92, 230, 0.12);
+  }
+
+  /* Dark Theme - Sleek Modern Dark Interface */
+  html.dark {
+    --bg-page: #08080A;
+    --surface-1: #171719;
+    --surface-2: #222225;
+    --surface-card: #131315;
+    --border-subtle: rgba(255, 255, 255, 0.12);
+    --border-hover: rgba(94, 92, 230, 0.55);
+    --text-primary: #F5F5F7;
+    --text-muted: #A1A1A6;
+    --accent: #5E5CE6;
+    --accent-silver: #D2D2D7;
+    --accent-glow: rgba(94, 92, 230, 0.25);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+}
+
+/* Apple Liquid Glass Layer Utilities - Toned for Eye Comfort */
+.apple-glass {
+  background: rgba(246, 246, 249, 0.84);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+html.dark .apple-glass {
+  background: rgba(23, 23, 25, 0.72);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.apple-glass-pill {
+  background: rgba(246, 246, 249, 0.88);
+  backdrop-filter: blur(20px) saturate(190%);
+  -webkit-backdrop-filter: blur(20px) saturate(190%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.07);
+}
+
+html.dark .apple-glass-pill {
+  background: rgba(23, 23, 25, 0.82);
+  backdrop-filter: blur(20px) saturate(190%);
+  -webkit-backdrop-filter: blur(20px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.35);
+}
+
+.apple-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: 24px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.apple-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.07);
+}
+
+html.dark .apple-card:hover {
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4);
+}
+
+/* Typography refinements */
+.font-editorial {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  letter-spacing: -0.025em;
+}
+
+.font-mono-tag {
+  font-family: "SF Mono", Menlo, Monaco, Consolas, monospace;
+  letter-spacing: 0.04em;
+  font-size: 0.75rem;
+}
+
+/* Infinite Telemetry Ticker */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-ticker {
+  display: flex;
+  width: max-content;
+  animation: ticker 36s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+/* Custom Scrollbar - Apple Minimal */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(142, 142, 147, 0.3);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(142, 142, 147, 0.6);
+}
+
+/* Selection */
+::selection {
+  background: rgba(94, 92, 230, 0.25);
+  color: inherit;
+}
+
+/* Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
