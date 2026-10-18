@@ -26,9 +26,9 @@ export function MagneticButton() {
     <div
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="p-8 rounded-2xl apple-glass flex flex-col items-center justify-center min-h-[220px]"
+      className="p-4 sm:p-8 rounded-2xl apple-glass flex flex-col items-center justify-center min-h-[200px] sm:min-h-[220px]"
     >
-      <div className="text-[11px] font-mono text-apple-secondary dark:text-apple-darkSecondary mb-6 uppercase tracking-wider">
+      <div className="text-[10px] sm:text-[11px] font-mono text-apple-secondary dark:text-apple-darkSecondary mb-4 sm:mb-6 uppercase tracking-wider text-center">
         Spring-Tethered Magnetic Button
       </div>
 
@@ -41,7 +41,7 @@ export function MagneticButton() {
         transition={{ type: 'spring', stiffness: 350, damping: 20 }}
         onMouseDown={() => setPressed(true)}
         onMouseUp={() => setPressed(false)}
-        className="px-7 py-3.5 rounded-full font-semibold text-sm bg-apple-indigo text-white shadow-lg shadow-apple-indigo/25 flex items-center gap-2 cursor-pointer select-none active:opacity-90"
+        className="px-5 sm:px-7 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm bg-apple-indigo text-white shadow-lg shadow-apple-indigo/25 flex items-center gap-2 cursor-pointer select-none active:opacity-90"
       >
         <Sparkles className="w-4 h-4" />
         <span>Execute Transaction</span>

@@ -131,30 +131,30 @@ export function ScrollStory() {
   const current = stages.find((s) => s.num === activeStage) || stages[0];
 
   return (
-    <section className="py-24 px-6 sm:px-8 max-w-6xl mx-auto">
+    <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto">
       <MotionReveal>
-        <div className="text-center max-w-3xl mx-auto space-y-3 pb-12">
+        <div className="text-center max-w-3xl mx-auto space-y-3 pb-8 sm:pb-12">
           <span className="text-xs font-mono uppercase tracking-[0.2em] text-apple-indigo font-semibold">
             Engineering Methodology
           </span>
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-apple-text dark:text-apple-darkText">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-apple-text dark:text-apple-darkText">
             How systems come to life.
           </h2>
-          <p className="text-base text-apple-secondary dark:text-apple-darkSecondary font-normal">
+          <p className="text-sm sm:text-base text-apple-secondary dark:text-apple-darkSecondary font-normal px-2">
             A continuous progression from architectural discovery to hardened production execution.
           </p>
         </div>
       </MotionReveal>
 
       {/* Stage Selector Tabs */}
-      <div className="flex items-center justify-center gap-2 p-1.5 rounded-full apple-glass max-w-xl mx-auto shadow-apple-subtle mb-10 overflow-x-auto">
+      <div className="flex items-center gap-1.5 sm:gap-2 p-1.5 rounded-2xl sm:rounded-full apple-glass max-w-full sm:max-w-xl mx-auto shadow-apple-subtle mb-8 sm:mb-10 overflow-x-auto scrollbar-none justify-start sm:justify-center px-2">
         {stages.map((stage) => {
           const isSelected = activeStage === stage.num;
           return (
             <button
               key={stage.num}
               onClick={() => setActiveStage(stage.num)}
-              className={`px-4 py-2 rounded-full text-xs font-mono transition-all flex items-center gap-2 shrink-0 ${
+              className={`px-3.5 sm:px-4 py-2 rounded-full text-xs font-mono transition-all flex items-center gap-1.5 sm:gap-2 shrink-0 ${
                 isSelected
                   ? 'bg-apple-indigo text-white font-bold shadow-md shadow-apple-indigo/20'
                   : 'text-apple-secondary dark:text-apple-darkSecondary hover:text-apple-text dark:hover:text-apple-darkText'
@@ -168,14 +168,14 @@ export function ScrollStory() {
       </div>
 
       {/* Interactive Stage Showcase */}
-      <div className="apple-glass-pill rounded-3xl p-8 sm:p-12 shadow-apple-float border border-black/[0.08] dark:border-white/[0.12] grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div className="apple-glass-pill rounded-3xl p-5 sm:p-8 md:p-12 shadow-apple-float border border-black/[0.08] dark:border-white/[0.12] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
         {/* Left Narrative */}
         <div className="lg:col-span-6 space-y-4">
           <div className="flex items-center gap-2">
             <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-apple-indigo/10 text-apple-indigo border border-apple-indigo/20">
               Stage 0{current.num}
             </span>
-            <span className="text-xs font-mono text-apple-secondary dark:text-apple-darkSecondary">
+            <span className="text-xs font-mono text-apple-secondary dark:text-apple-darkSecondary truncate">
               {current.tagline}
             </span>
           </div>
@@ -189,19 +189,19 @@ export function ScrollStory() {
               transition={{ duration: 0.3 }}
               className="space-y-4"
             >
-              <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-apple-text dark:text-apple-darkText leading-snug">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-apple-text dark:text-apple-darkText leading-snug">
                 {current.headline}
               </h3>
-              <p className="text-sm sm:text-base text-apple-secondary dark:text-apple-darkSecondary leading-relaxed">
+              <p className="text-xs sm:text-sm md:text-base text-apple-secondary dark:text-apple-darkSecondary leading-relaxed">
                 {current.description}
               </p>
             </motion.div>
           </AnimatePresence>
 
-          <div className="pt-4 flex items-center gap-3">
+          <div className="pt-2 sm:pt-4 flex items-center gap-3">
             <button
               onClick={() => setActiveStage((prev) => (prev < 4 ? prev + 1 : 1))}
-              className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-apple-indigo hover:underline"
+              className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-apple-indigo hover:underline cursor-pointer"
             >
               <span>{current.num < 4 ? 'Next Stage: ' + stages[current.num].name : 'Restart Sequence'}</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -210,7 +210,7 @@ export function ScrollStory() {
         </div>
 
         {/* Right Animated Visual Stage */}
-        <div className="lg:col-span-6">
+        <div className="lg:col-span-6 w-full">
           <AnimatePresence mode="wait">
             <motion.div
               key={current.num}

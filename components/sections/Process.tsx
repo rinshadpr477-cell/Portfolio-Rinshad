@@ -54,24 +54,24 @@ export function Process() {
   ];
 
   return (
-    <section id="process" className="py-24 px-6 sm:px-8 max-w-6xl mx-auto scroll-mt-20">
+    <section id="process" className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto scroll-mt-20">
       {/* Header */}
       <MotionReveal>
-        <div className="pb-12 border-b border-black/[0.06] dark:border-white/[0.08]">
+        <div className="pb-8 sm:pb-12 border-b border-black/[0.06] dark:border-white/[0.08]">
           <span className="text-xs font-mono uppercase tracking-[0.2em] text-apple-indigo font-semibold">
             04 / Engineering Process
           </span>
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-apple-text dark:text-apple-darkText mt-3">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-apple-text dark:text-apple-darkText mt-3">
             Structured for predictable delivery.
           </h2>
-          <p className="mt-3 text-base text-apple-secondary dark:text-apple-darkSecondary max-w-2xl font-normal leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-apple-secondary dark:text-apple-darkSecondary max-w-2xl font-normal leading-relaxed">
             A disciplined four-stage cycle that balances architectural rigor with rapid, functional iterations.
           </p>
         </div>
       </MotionReveal>
 
       {/* Desktop Horizontal Timeline & Mobile Vertical Timeline */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 relative">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-8 sm:mt-12 relative">
         {stages.map((stage, idx) => {
           const Icon = stage.icon;
           return (
@@ -82,7 +82,7 @@ export function Process() {
               viewport={{ once: true, margin: '-30px' }}
               transition={{ duration: 0.6, delay: idx * 0.12 }}
               whileHover={{ y: -4 }}
-              className="p-7 rounded-3xl apple-glass shadow-apple-card hover:shadow-apple-float transition-all flex flex-col justify-between relative group"
+              className="p-5 sm:p-7 rounded-3xl apple-glass shadow-apple-card hover:shadow-apple-float transition-all flex flex-col justify-between relative group"
             >
               <div>
                 <div className="flex items-center justify-between pb-4 border-b border-black/[0.06] dark:border-white/[0.08]">

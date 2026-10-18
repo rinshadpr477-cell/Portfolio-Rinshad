@@ -118,7 +118,7 @@ export function Navbar({ onOpenCommandPalette, soundEnabled, onToggleSound }: Na
           </nav>
 
           {/* Action Utilities & CTA */}
-          <div className="flex items-center gap-1.5 sm:gap-2">
+          <div className="flex items-center gap-1 sm:gap-2">
             {/* Cmd+K Quick Palette Trigger */}
             <button
               onClick={onOpenCommandPalette}
@@ -155,10 +155,10 @@ export function Navbar({ onOpenCommandPalette, soundEnabled, onToggleSound }: Na
               )}
             </button>
 
-            {/* Restrained Apple "Let's talk" Pill Action */}
+            {/* Restrained Apple "Let's talk" Pill Action - Visible on tablets and desktops */}
             <a
               href="#contact"
-              className="inline-flex items-center justify-center px-4 py-1.5 rounded-full text-xs font-semibold bg-apple-text dark:bg-apple-darkText text-apple-bg dark:text-apple-darkBg hover:opacity-90 active:scale-95 transition-all shadow-sm"
+              className="hidden sm:inline-flex items-center justify-center px-4 py-1.5 rounded-full text-xs font-semibold bg-apple-text dark:bg-apple-darkText text-apple-bg dark:text-apple-darkBg hover:opacity-90 active:scale-95 transition-all shadow-sm"
             >
               <span>Let&apos;s talk</span>
             </a>
@@ -167,7 +167,7 @@ export function Navbar({ onOpenCommandPalette, soundEnabled, onToggleSound }: Na
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle mobile navigation menu"
-              className="md:hidden p-1.5 rounded-full bg-black/[0.03] dark:bg-white/[0.04] text-apple-text dark:text-apple-darkText"
+              className="md:hidden p-2 rounded-full bg-black/[0.04] dark:bg-white/[0.06] text-apple-text dark:text-apple-darkText border border-black/[0.06] dark:border-white/[0.08]"
             >
               {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
             </button>
@@ -175,7 +175,7 @@ export function Navbar({ onOpenCommandPalette, soundEnabled, onToggleSound }: Na
         </div>
       </div>
 
-      {/* Touch-Friendly Mobile Drawer */}
+      {/* Touch-Friendly Mobile Drawer with High-Opacity Apple Glass */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -183,32 +183,49 @@ export function Navbar({ onOpenCommandPalette, soundEnabled, onToggleSound }: Na
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -12, scale: 0.98 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden pointer-events-auto max-w-5xl mx-auto mt-2 p-5 rounded-3xl apple-glass shadow-apple-float"
+            className="md:hidden pointer-events-auto max-w-5xl mx-auto mt-2.5 p-5 rounded-3xl bg-[#F6F6F9]/96 dark:bg-[#171719]/96 backdrop-blur-2xl border border-black/[0.1] dark:border-white/[0.14] shadow-2xl"
           >
-            <div className="flex flex-col gap-2.5">
+            <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <a
                   key={link.id}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-sm font-medium py-2 px-3 rounded-xl transition ${
+                  className={`text-sm font-medium py-2.5 px-3.5 rounded-xl transition flex items-center justify-between ${
                     activeSection === link.id
-                      ? 'bg-black/[0.06] dark:bg-white/[0.1] text-apple-text dark:text-apple-darkText font-semibold'
+                      ? 'bg-black/[0.06] dark:bg-white/[0.12] text-apple-text dark:text-apple-darkText font-semibold'
                       : 'text-apple-secondary dark:text-apple-darkSecondary hover:text-apple-text dark:hover:text-apple-darkText'
                   }`}
                 >
-                  {link.label}
+                  <span>{link.label}</span>
+                  <span className="text-[10px] font-mono text-apple-secondary dark:text-apple-darkSecondary opacity-60">#{link.id}</span>
                 </a>
               ))}
-              <div className="pt-3 border-t border-black/[0.06] dark:border-white/[0.08] flex items-center justify-between">
+
+              {/* Mobile Command Palette trigger */}
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenCommandPalette();
+                }}
+                className="w-full text-left py-2.5 px-3.5 rounded-xl border border-dashed border-black/[0.1] dark:border-white/[0.12] text-xs font-mono text-apple-secondary dark:text-apple-darkSecondary hover:text-apple-text dark:hover:text-apple-darkText flex items-center justify-between mt-1"
+              >
+                <span className="flex items-center gap-2">
+                  <Command className="w-3.5 h-3.5 text-apple-indigo" />
+                  <span>Search & Commands</span>
+                </span>
+                <span className="text-[10px] px-2 py-0.5 rounded bg-black/[0.04] dark:bg-white/[0.08]">⌘K</span>
+              </button>
+
+              <div className="pt-3.5 mt-1 border-t border-black/[0.08] dark:border-white/[0.1] flex items-center justify-between">
                 <div className="flex items-center gap-1.5 text-xs font-mono text-apple-secondary dark:text-apple-darkSecondary">
-                  <Clock className="w-3.5 h-3.5" />
+                  <Clock className="w-3.5 h-3.5 text-apple-indigo" />
                   <span>Calicut: {calicutTime}</span>
                 </div>
                 <a
                   href="#contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="px-4 py-1.5 rounded-full text-xs font-semibold bg-apple-indigo text-white shadow-sm"
+                  className="px-4 py-2 rounded-full text-xs font-semibold bg-apple-indigo text-white shadow-md active:scale-95 transition-transform"
                 >
                   Start a project
                 </a>

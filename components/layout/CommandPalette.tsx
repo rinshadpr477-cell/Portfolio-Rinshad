@@ -123,7 +123,7 @@ export function CommandPalette({ isOpen, onClose, onSelectProject }: CommandPale
 
   return (
     <div
-      className="fixed inset-0 z-[1000] bg-black/50 dark:bg-black/70 backdrop-blur-xl flex items-start justify-center pt-24 px-4"
+      className="fixed inset-0 z-[1000] bg-black/50 dark:bg-black/70 backdrop-blur-xl flex items-start justify-center pt-12 sm:pt-24 px-3 sm:px-4"
       onClick={onClose}
     >
       <div
@@ -131,7 +131,7 @@ export function CommandPalette({ isOpen, onClose, onSelectProject }: CommandPale
         onClick={(e) => e.stopPropagation()}
         onKeyDown={handleKeyDown}
       >
-        <div className="flex items-center px-5 py-4 border-b border-black/[0.06] dark:border-white/[0.08]">
+        <div className="flex items-center px-4 sm:px-5 py-3.5 sm:py-4 border-b border-black/[0.06] dark:border-white/[0.08]">
           <Search className="w-5 h-5 text-apple-secondary dark:text-apple-darkSecondary mr-3 shrink-0" />
           <input
             ref={inputRef}
@@ -173,7 +173,7 @@ export function CommandPalette({ isOpen, onClose, onSelectProject }: CommandPale
                       : 'text-apple-text dark:text-apple-darkText hover:bg-black/[0.03] dark:hover:bg-white/[0.04]'
                   }`}
                 >
-                  <div className="flex items-center gap-3 truncate">
+                  <div className="flex items-center gap-3 truncate min-w-0">
                     <Icon className={`w-4 h-4 shrink-0 ${isSelected ? 'text-white' : 'text-apple-secondary dark:text-apple-darkSecondary'}`} />
                     <span className="truncate font-medium">{item.title}</span>
                     <span className={`text-[10px] uppercase font-mono tracking-wider px-2 py-0.5 rounded shrink-0 ${
@@ -191,13 +191,13 @@ export function CommandPalette({ isOpen, onClose, onSelectProject }: CommandPale
           )}
         </div>
 
-        <div className="flex items-center justify-between px-5 py-2.5 border-t border-black/[0.06] dark:border-white/[0.08] bg-black/[0.015] dark:bg-white/[0.02] text-[11px] text-apple-secondary dark:text-apple-darkSecondary font-mono">
-          <div className="flex items-center gap-3">
-            <span>↑↓ Navigate</span>
+        <div className="flex items-center justify-between px-4 sm:px-5 py-2.5 border-t border-black/[0.06] dark:border-white/[0.08] bg-black/[0.015] dark:bg-white/[0.02] text-[11px] text-apple-secondary dark:text-apple-darkSecondary font-mono">
+          <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+            <span className="hidden xs:inline">↑↓ Navigate</span>
             <span>↵ Select</span>
             <span>ESC Close</span>
           </div>
-          <div>⌘ / Ctrl + K</div>
+          <div className="hidden sm:block">⌘ / Ctrl + K</div>
         </div>
       </div>
     </div>

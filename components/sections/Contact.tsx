@@ -73,41 +73,41 @@ export function Contact({ preselectedService }: ContactProps) {
   const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL;
 
   return (
-    <section id="contact" className="py-24 px-6 sm:px-8 max-w-6xl mx-auto scroll-mt-20">
+    <section id="contact" className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto scroll-mt-20">
       {/* Header */}
       <MotionReveal>
-        <div className="pb-12 border-b border-black/[0.06] dark:border-white/[0.08]">
+        <div className="pb-8 sm:pb-12 border-b border-black/[0.06] dark:border-white/[0.08]">
           <span className="text-xs font-mono uppercase tracking-[0.2em] text-apple-indigo font-semibold">
             07 / Contact
           </span>
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-apple-text dark:text-apple-darkText mt-3">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-apple-text dark:text-apple-darkText mt-3">
             Let&apos;s build something meaningful.
           </h2>
-          <p className="mt-3 text-base text-apple-secondary dark:text-apple-darkSecondary max-w-2xl font-normal leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-apple-secondary dark:text-apple-darkSecondary max-w-2xl font-normal leading-relaxed">
             Whether you are building an MVP from zero, optimizing real-time queues, or looking for an engineer to join your team.
           </p>
         </div>
       </MotionReveal>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-12 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 mt-8 sm:mt-12 items-start">
         {/* Left Column: Direct Links & AI Assistant */}
-        <div className="lg:col-span-5 space-y-6">
+        <div className="lg:col-span-5 space-y-6 w-full">
           <div className="space-y-3">
             {/* Email */}
             <a
               href="mailto:rinshadpr477@gmail.com"
-              className="p-4 rounded-2xl apple-glass shadow-apple-subtle hover:border-apple-indigo transition-all flex items-center justify-between group"
+              className="p-3.5 sm:p-4 rounded-2xl apple-glass shadow-apple-subtle hover:border-apple-indigo transition-all flex items-center justify-between group"
             >
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded-xl bg-apple-indigo/10 text-apple-indigo group-hover:scale-110 transition-transform">
+              <div className="flex items-center gap-3 min-w-0 mr-2">
+                <div className="p-2 rounded-xl bg-apple-indigo/10 text-apple-indigo group-hover:scale-110 transition-transform shrink-0">
                   <Mail className="w-4 h-4" />
                 </div>
-                <div>
-                  <div className="text-[11px] font-mono text-apple-secondary dark:text-apple-darkSecondary">Direct Email</div>
-                  <div className="text-sm font-semibold text-apple-text dark:text-apple-darkText font-mono">rinshadpr477@gmail.com</div>
+                <div className="min-w-0">
+                  <div className="text-[10px] sm:text-[11px] font-mono text-apple-secondary dark:text-apple-darkSecondary">Direct Email</div>
+                  <div className="text-xs sm:text-sm font-semibold text-apple-text dark:text-apple-darkText font-mono truncate">rinshadpr477@gmail.com</div>
                 </div>
               </div>
-              <ArrowRight className="w-4 h-4 text-apple-secondary dark:text-apple-darkSecondary group-hover:text-apple-indigo group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-apple-secondary dark:text-apple-darkSecondary group-hover:text-apple-indigo group-hover:translate-x-1 transition-transform shrink-0" />
             </a>
 
             {/* WhatsApp */}
@@ -115,29 +115,29 @@ export function Contact({ preselectedService }: ContactProps) {
               href="https://wa.me/918593923135"
               target="_blank"
               rel="noreferrer"
-              className="p-4 rounded-2xl apple-glass shadow-apple-subtle hover:border-emerald-500/50 transition-all flex items-center justify-between group"
+              className="p-3.5 sm:p-4 rounded-2xl apple-glass shadow-apple-subtle hover:border-emerald-500/50 transition-all flex items-center justify-between group"
             >
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-500 group-hover:scale-110 transition-transform">
+              <div className="flex items-center gap-3 min-w-0 mr-2">
+                <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-500 group-hover:scale-110 transition-transform shrink-0">
                   <MessageSquare className="w-4 h-4" />
                 </div>
-                <div>
-                  <div className="text-[11px] font-mono text-apple-secondary dark:text-apple-darkSecondary">WhatsApp</div>
-                  <div className="text-sm font-semibold text-apple-text dark:text-apple-darkText font-mono">+91 8593923135</div>
+                <div className="min-w-0">
+                  <div className="text-[10px] sm:text-[11px] font-mono text-apple-secondary dark:text-apple-darkSecondary">WhatsApp</div>
+                  <div className="text-xs sm:text-sm font-semibold text-apple-text dark:text-apple-darkText font-mono truncate">+91 8593923135</div>
                 </div>
               </div>
-              <ExternalLink className="w-4 h-4 text-apple-secondary dark:text-apple-darkSecondary group-hover:text-emerald-500 transition-colors" />
+              <ExternalLink className="w-4 h-4 text-apple-secondary dark:text-apple-darkSecondary group-hover:text-emerald-500 transition-colors shrink-0" />
             </a>
 
             {/* Intro Call */}
-            <div className="p-4 rounded-2xl apple-glass shadow-apple-subtle flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded-xl bg-black/[0.03] dark:bg-white/[0.04] text-apple-secondary dark:text-apple-darkSecondary">
+            <div className="p-3.5 sm:p-4 rounded-2xl apple-glass shadow-apple-subtle flex items-center justify-between">
+              <div className="flex items-center gap-3 min-w-0 mr-2">
+                <div className="p-2 rounded-xl bg-black/[0.03] dark:bg-white/[0.04] text-apple-secondary dark:text-apple-darkSecondary shrink-0">
                   <Calendar className="w-4 h-4" />
                 </div>
-                <div>
-                  <div className="text-[11px] font-mono text-apple-secondary dark:text-apple-darkSecondary">Discovery Call</div>
-                  <div className="text-sm font-semibold text-apple-text dark:text-apple-darkText font-mono">15-Minute Intro</div>
+                <div className="min-w-0">
+                  <div className="text-[10px] sm:text-[11px] font-mono text-apple-secondary dark:text-apple-darkSecondary">Discovery Call</div>
+                  <div className="text-xs sm:text-sm font-semibold text-apple-text dark:text-apple-darkText font-mono truncate">15-Minute Intro</div>
                 </div>
               </div>
               {bookingUrl ? (
@@ -145,14 +145,14 @@ export function Contact({ preselectedService }: ContactProps) {
                   href={bookingUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="px-3.5 py-1.5 rounded-full bg-apple-indigo text-white font-mono text-xs font-semibold hover:opacity-90 transition"
+                  className="px-3 sm:px-3.5 py-1.5 rounded-full bg-apple-indigo text-white font-mono text-xs font-semibold hover:opacity-90 transition shrink-0"
                 >
                   Schedule
                 </a>
               ) : (
                 <a
                   href="mailto:rinshadpr477@gmail.com?subject=Intro%20Call%20Request%20-%20Rinshad%20PR&body=Hi%20Rinshad,%0A%0AI'd%20like%20to%20schedule%20a%20brief%20call%20to%20discuss%20an%20engineering%20opportunity.%0A%0AAvailable%20times:"
-                  className="px-3.5 py-1.5 rounded-full bg-black/[0.04] dark:bg-white/[0.06] text-apple-text dark:text-apple-darkText hover:bg-apple-indigo hover:text-white font-mono text-xs transition"
+                  className="px-3 sm:px-3.5 py-1.5 rounded-full bg-black/[0.04] dark:bg-white/[0.06] text-apple-text dark:text-apple-darkText hover:bg-apple-indigo hover:text-white font-mono text-xs transition shrink-0"
                 >
                   Request Time
                 </a>
@@ -161,14 +161,14 @@ export function Contact({ preselectedService }: ContactProps) {
           </div>
 
           {/* AI Portfolio Assistant in Apple Glass Enclosure */}
-          <div className="rounded-3xl apple-glass p-1 shadow-apple-subtle">
+          <div className="rounded-3xl apple-glass p-0.5 sm:p-1 shadow-apple-subtle">
             <PortfolioAssistant />
           </div>
         </div>
 
         {/* Right Column: Contact Form */}
-        <div className="lg:col-span-7">
-          <div className="p-8 sm:p-10 rounded-3xl apple-glass shadow-apple-float">
+        <div className="lg:col-span-7 w-full">
+          <div className="p-5 sm:p-8 md:p-10 rounded-3xl apple-glass shadow-apple-float">
             <h3 className="text-2xl font-bold tracking-tight text-apple-text dark:text-apple-darkText">
               Project Specification
             </h3>

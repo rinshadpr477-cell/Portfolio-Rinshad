@@ -11,17 +11,17 @@ export function DonutProgress() {
   const strokeDashoffset = circumference - (percent / 100) * circumference;
 
   return (
-    <div className="p-8 rounded-2xl apple-glass flex flex-col items-center justify-center min-h-[220px]">
-      <div className="text-[11px] font-mono text-apple-secondary dark:text-apple-darkSecondary mb-4 uppercase tracking-wider">
+    <div className="p-4 sm:p-8 rounded-2xl apple-glass flex flex-col items-center justify-center min-h-[200px] sm:min-h-[220px]">
+      <div className="text-[10px] sm:text-[11px] font-mono text-apple-secondary dark:text-apple-darkSecondary mb-3 sm:mb-4 uppercase tracking-wider text-center">
         Interactive Circular Gauge
       </div>
 
       <div className="relative flex items-center justify-center">
-        <svg width="140" height="140" className="transform -rotate-90">
+        <svg width="130" height="130" className="transform -rotate-90">
           {/* Track */}
           <circle
-            cx="70"
-            cy="70"
+            cx="65"
+            cy="65"
             r={radius}
             fill="transparent"
             stroke="currentColor"
@@ -30,8 +30,8 @@ export function DonutProgress() {
           />
           {/* Animated Indicator */}
           <circle
-            cx="70"
-            cy="70"
+            cx="65"
+            cy="65"
             r={radius}
             fill="transparent"
             stroke="#5E5CE6"
@@ -44,18 +44,18 @@ export function DonutProgress() {
         </svg>
 
         <div className="absolute flex flex-col items-center justify-center text-center">
-          <span className="text-2xl font-bold font-mono text-apple-text dark:text-apple-darkText">{percent}%</span>
-          <span className="text-[10px] font-mono text-apple-secondary dark:text-apple-darkSecondary uppercase">Delivery</span>
+          <span className="text-xl sm:text-2xl font-bold font-mono text-apple-text dark:text-apple-darkText">{percent}%</span>
+          <span className="text-[9px] sm:text-[10px] font-mono text-apple-secondary dark:text-apple-darkSecondary uppercase">Delivery</span>
         </div>
       </div>
 
       {/* Preset Controls */}
-      <div className="flex items-center gap-2 mt-5">
+      <div className="flex items-center gap-1.5 sm:gap-2 mt-4 sm:mt-5 flex-wrap justify-center">
         {[25, 50, 78, 98.5].map((val) => (
           <button
             key={val}
             onClick={() => setPercent(val)}
-            className={`px-3 py-1 rounded-full text-xs font-mono border transition ${
+            className={`px-2.5 sm:px-3 py-1 rounded-full text-xs font-mono border transition cursor-pointer ${
               percent === val
                 ? 'bg-apple-indigo text-white border-apple-indigo font-bold shadow-sm'
                 : 'bg-black/[0.03] dark:bg-white/[0.04] border-black/[0.06] dark:border-white/[0.08] text-apple-secondary dark:text-apple-darkSecondary hover:text-apple-text dark:hover:text-apple-darkText'

@@ -128,6 +128,7 @@ html.dark .apple-card:hover {
 /* Custom Scrollbar - Apple Minimal */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -145,6 +146,19 @@ html.dark .apple-card:hover {
   background: rgba(142, 142, 147, 0.6);
 }
 
+/* Hide scrollbar for chrome, safari and opera */
+.no-scrollbar::-webkit-scrollbar,
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar,
+.scrollbar-none {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 /* Selection */
 ::selection {
   background: rgba(94, 92, 230, 0.25);
@@ -160,3 +174,4 @@ html.dark .apple-card:hover {
     scroll-behavior: auto !important;
   }
 }
+

@@ -47,32 +47,32 @@ export function TiltProjectCard({ project, idx, colSpan, onOpenProject }: TiltPr
     // 1. Bank AI Calling Agent
     if (project.id === 'bank-ai-calling') {
       return (
-        <div className="my-5 p-4 rounded-2xl bg-black/[0.03] dark:bg-white/[0.03] border border-black/[0.06] dark:border-white/[0.08] font-mono text-xs space-y-3">
-          <div className="flex items-center justify-between text-[11px]">
+        <div className="my-5 p-3.5 sm:p-4 rounded-2xl bg-black/[0.03] dark:bg-white/[0.03] border border-black/[0.06] dark:border-white/[0.08] font-mono text-xs space-y-3">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5 text-[11px]">
             <span className="flex items-center gap-1.5 text-apple-indigo font-bold">
-              <Activity className="w-3.5 h-3.5 animate-pulse" />
-              <span>TWILIO MEDIA STREAMS ↔ GEMINI LIVE</span>
+              <Activity className="w-3.5 h-3.5 animate-pulse shrink-0" />
+              <span className="truncate">TWILIO MEDIA STREAMS ↔ GEMINI LIVE</span>
             </span>
-            <span className="px-2 py-0.5 rounded-full bg-apple-indigo/10 text-apple-indigo font-bold border border-apple-indigo/20">
+            <span className="px-2 py-0.5 rounded-full bg-apple-indigo/10 text-apple-indigo font-bold border border-apple-indigo/20 self-start sm:self-auto text-[10px]">
               Latency: 2.9s (down from 5.0s)
             </span>
           </div>
 
           {/* Audio Waveform & Conversation State */}
-          <div className="flex items-center justify-center gap-1 h-9 bg-white dark:bg-[#1a1a1c] rounded-xl border border-black/[0.05] dark:border-white/[0.08] px-3">
+          <div className="flex items-center justify-center gap-1 h-9 bg-white dark:bg-[#1a1a1c] rounded-xl border border-black/[0.05] dark:border-white/[0.08] px-3 overflow-hidden">
             {[20, 50, 30, 80, 45, 95, 60, 85, 35, 75, 40, 90, 55, 65, 30, 45, 20].map((h, i) => (
               <motion.span
                 key={i}
                 animate={{ height: [`${h * 0.3}%`, `${h}%`, `${h * 0.4}%`] }}
                 transition={{ duration: 1.3, repeat: Infinity, delay: i * 0.05 }}
-                className="w-1.5 rounded-full bg-apple-indigo inline-block"
+                className="w-1.5 rounded-full bg-apple-indigo inline-block shrink-0"
               />
             ))}
           </div>
 
-          <div className="flex items-center justify-between text-[10px] text-apple-secondary dark:text-apple-darkSecondary">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[10px] text-apple-secondary dark:text-apple-darkSecondary">
             <span className="flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping shrink-0" />
               <span>State: Bi-directional Full Duplex</span>
             </span>
             <span>300+ calls/day · 82% answer rate</span>
@@ -84,32 +84,32 @@ export function TiltProjectCard({ project, idx, colSpan, onOpenProject }: TiltPr
     // 2. Infinity Fleet Bulk SMS
     if (project.id === 'infinity-fleet') {
       return (
-        <div className="my-5 p-4 rounded-2xl bg-black/[0.03] dark:bg-white/[0.03] border border-black/[0.06] dark:border-white/[0.08] font-mono text-xs space-y-3">
-          <div className="flex items-center justify-between text-[11px]">
+        <div className="my-5 p-3.5 sm:p-4 rounded-2xl bg-black/[0.03] dark:bg-white/[0.03] border border-black/[0.06] dark:border-white/[0.08] font-mono text-xs space-y-3">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[11px]">
             <span className="flex items-center gap-1.5 text-apple-text dark:text-apple-darkText font-bold">
-              <Send className="w-3.5 h-3.5 text-apple-indigo" />
+              <Send className="w-3.5 h-3.5 text-apple-indigo shrink-0" />
               <span>BATCH DISPATCH ORCHESTRATION</span>
             </span>
-            <span className="text-emerald-600 dark:text-emerald-400 font-bold">98.5% Delivery Success</span>
+            <span className="text-emerald-600 dark:text-emerald-400 font-bold self-start sm:self-auto text-[10px]">98.5% Delivery Success</span>
           </div>
 
           {/* Visual Message Units Moving Through Stages */}
-          <div className="grid grid-cols-4 gap-2 text-[10px] text-center pt-1">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[10px] text-center pt-1">
             <div className="p-2 rounded-lg bg-white dark:bg-[#1a1a1c] border border-black/[0.06] dark:border-white/[0.08]">
               <div className="text-apple-secondary dark:text-apple-darkSecondary text-[9px]">STAGE 1</div>
-              <div className="font-bold text-apple-text dark:text-apple-darkText">CSV Stream</div>
+              <div className="font-bold text-apple-text dark:text-apple-darkText truncate">CSV Stream</div>
             </div>
             <div className="p-2 rounded-lg bg-white dark:bg-[#1a1a1c] border border-apple-indigo/30 text-apple-indigo">
               <div className="text-[9px] opacity-75">STAGE 2</div>
-              <div className="font-bold">BullMQ Queue</div>
+              <div className="font-bold truncate">BullMQ Queue</div>
             </div>
             <div className="p-2 rounded-lg bg-white dark:bg-[#1a1a1c] border border-black/[0.06] dark:border-white/[0.08]">
               <div className="text-apple-secondary dark:text-apple-darkSecondary text-[9px]">STAGE 3</div>
-              <div className="font-bold text-apple-text dark:text-apple-darkText">Telecom API</div>
+              <div className="font-bold text-apple-text dark:text-apple-darkText truncate">Telecom API</div>
             </div>
             <div className="p-2 rounded-lg bg-white dark:bg-[#1a1a1c] border border-emerald-500/40 text-emerald-600 dark:text-emerald-400 font-bold">
               <div className="text-[9px] opacity-75">IDEMPOTENT</div>
-              <div>0 Duplicates</div>
+              <div className="truncate">0 Duplicates</div>
             </div>
           </div>
         </div>
@@ -119,16 +119,16 @@ export function TiltProjectCard({ project, idx, colSpan, onOpenProject }: TiltPr
     // 3. Laundry Near Marketplace
     if (project.id === 'laundry-near') {
       return (
-        <div className="my-5 p-4 rounded-2xl bg-black/[0.03] dark:bg-white/[0.03] border border-black/[0.06] dark:border-white/[0.08] font-mono text-xs space-y-3">
-          <div className="flex items-center justify-between text-[11px]">
+        <div className="my-5 p-3.5 sm:p-4 rounded-2xl bg-black/[0.03] dark:bg-white/[0.03] border border-black/[0.06] dark:border-white/[0.08] font-mono text-xs space-y-3">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[11px]">
             <span className="flex items-center gap-1.5 text-apple-text dark:text-apple-darkText font-bold">
-              <ShoppingBag className="w-3.5 h-3.5 text-apple-indigo" />
+              <ShoppingBag className="w-3.5 h-3.5 text-apple-indigo shrink-0" />
               <span>TWO-SIDED MARKETPLACE & PAYMENTS</span>
             </span>
-            <span className="text-apple-indigo font-bold">500+ Registered Users</span>
+            <span className="text-apple-indigo font-bold self-start sm:self-auto text-[10px]">500+ Registered Users</span>
           </div>
 
-          <div className="grid grid-cols-3 gap-2 text-[10px] text-center pt-1">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-[10px] text-center pt-1">
             <div className="p-2 rounded-lg bg-white dark:bg-[#1a1a1c] border border-black/[0.06] dark:border-white/[0.08]">
               <div className="text-apple-secondary dark:text-apple-darkSecondary text-[9px]">CUSTOMER</div>
               <div className="font-bold text-apple-text dark:text-apple-darkText">Pickup Booking</div>
@@ -149,16 +149,16 @@ export function TiltProjectCard({ project, idx, colSpan, onOpenProject }: TiltPr
     // 4. Enterprise Bank Platform
     if (project.id === 'enterprise-bank-platform') {
       return (
-        <div className="my-5 p-4 rounded-2xl bg-black/[0.03] dark:bg-white/[0.03] border border-black/[0.06] dark:border-white/[0.08] font-mono text-xs space-y-3">
-          <div className="flex items-center justify-between text-[11px]">
+        <div className="my-5 p-3.5 sm:p-4 rounded-2xl bg-black/[0.03] dark:bg-white/[0.03] border border-black/[0.06] dark:border-white/[0.08] font-mono text-xs space-y-3">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[11px]">
             <span className="flex items-center gap-1.5 text-apple-text dark:text-apple-darkText font-bold">
-              <Radio className="w-3.5 h-3.5 text-apple-indigo animate-pulse" />
+              <Radio className="w-3.5 h-3.5 text-apple-indigo animate-pulse shrink-0" />
               <span>TRANSACTIONAL OUTBOX & KAFKA</span>
             </span>
-            <span className="text-emerald-600 dark:text-emerald-400 font-bold">1,000+ Events Exactly-Once</span>
+            <span className="text-emerald-600 dark:text-emerald-400 font-bold self-start sm:self-auto text-[10px]">1,000+ Events Exactly-Once</span>
           </div>
 
-          <div className="grid grid-cols-3 gap-2 text-[10px] text-center pt-1">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-[10px] text-center pt-1">
             <div className="p-2 rounded-lg bg-white dark:bg-[#1a1a1c] border border-black/[0.06] dark:border-white/[0.08]">
               <div className="text-apple-secondary dark:text-apple-darkSecondary text-[9px]">ATOMIC COMMIT</div>
               <div className="font-bold text-apple-text dark:text-apple-darkText">PostgreSQL 16</div>
@@ -179,16 +179,16 @@ export function TiltProjectCard({ project, idx, colSpan, onOpenProject }: TiltPr
     // 5. Groundcrew RAG
     if (project.id === 'groundcrew-rag-agent') {
       return (
-        <div className="my-5 p-4 rounded-2xl bg-black/[0.03] dark:bg-white/[0.03] border border-black/[0.06] dark:border-white/[0.08] font-mono text-xs space-y-3">
-          <div className="flex items-center justify-between text-[11px]">
+        <div className="my-5 p-3.5 sm:p-4 rounded-2xl bg-black/[0.03] dark:bg-white/[0.03] border border-black/[0.06] dark:border-white/[0.08] font-mono text-xs space-y-3">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[11px]">
             <span className="flex items-center gap-1.5 text-apple-text dark:text-apple-darkText font-bold">
-              <Cpu className="w-3.5 h-3.5 text-apple-indigo" />
+              <Cpu className="w-3.5 h-3.5 text-apple-indigo shrink-0" />
               <span>AUTONOMOUS MULTI-AGENT RAG</span>
             </span>
-            <span className="text-emerald-600 dark:text-emerald-400 font-bold">96.7% Critic Approval</span>
+            <span className="text-emerald-600 dark:text-emerald-400 font-bold self-start sm:self-auto text-[10px]">96.7% Critic Approval</span>
           </div>
 
-          <div className="grid grid-cols-3 gap-2 text-[10px] text-center pt-1">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-[10px] text-center pt-1">
             <div className="p-2 rounded-lg bg-white dark:bg-[#1a1a1c] border border-black/[0.06] dark:border-white/[0.08]">
               <div className="text-apple-secondary dark:text-apple-darkSecondary text-[9px]">QDRANT VECTOR</div>
               <div className="font-bold text-apple-text dark:text-apple-darkText">3,181 Issues</div>
@@ -225,11 +225,11 @@ export function TiltProjectCard({ project, idx, colSpan, onOpenProject }: TiltPr
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.6, delay: idx * 0.08 }}
-      className={`${colSpan} group relative rounded-3xl apple-glass p-7 sm:p-9 cursor-pointer flex flex-col justify-between overflow-hidden shadow-apple-card hover:shadow-apple-float transition-all duration-300`}
+      className={`${colSpan} group relative rounded-3xl apple-glass p-5 sm:p-7 md:p-9 cursor-pointer flex flex-col justify-between overflow-hidden shadow-apple-card hover:shadow-apple-float transition-all duration-300`}
     >
       <div>
         {/* Top Metadata Row */}
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-4">
           <div className="flex items-center gap-2 font-mono text-xs text-apple-secondary dark:text-apple-darkSecondary">
             <span className="font-bold text-apple-indigo">0{idx + 1}</span>
             <span className="opacity-40">/</span>
@@ -237,14 +237,14 @@ export function TiltProjectCard({ project, idx, colSpan, onOpenProject }: TiltPr
           </div>
 
           {project.featuredMetric && (
-            <div className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-apple-indigo/10 text-apple-indigo border border-apple-indigo/20">
+            <div className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-apple-indigo/10 text-apple-indigo border border-apple-indigo/20 self-start sm:self-auto text-[11px] sm:text-xs">
               {project.featuredMetric.value} {project.featuredMetric.label}
             </div>
           )}
         </div>
 
         {/* Project Title */}
-        <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-apple-text dark:text-apple-darkText mt-5 group-hover:text-apple-indigo transition-colors duration-200">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-apple-text dark:text-apple-darkText mt-4 sm:mt-5 group-hover:text-apple-indigo transition-colors duration-200">
           {project.title}
         </h3>
 
@@ -254,7 +254,7 @@ export function TiltProjectCard({ project, idx, colSpan, onOpenProject }: TiltPr
         </p>
 
         {/* Description */}
-        <p className="mt-3.5 text-sm sm:text-base text-apple-secondary dark:text-apple-darkSecondary leading-relaxed">
+        <p className="mt-3 text-xs sm:text-sm md:text-base text-apple-secondary dark:text-apple-darkSecondary leading-relaxed">
           {project.description}
         </p>
 
@@ -280,20 +280,20 @@ export function TiltProjectCard({ project, idx, colSpan, onOpenProject }: TiltPr
       </div>
 
       {/* Bottom Action Footer */}
-      <div className="mt-8 pt-6 border-t border-black/[0.06] dark:border-white/[0.08] flex flex-wrap items-center justify-between gap-4">
+      <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-black/[0.06] dark:border-white/[0.08] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-apple-indigo group-hover:underline">
           <span>Explore Case Study</span>
           <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           {project.githubUrl && (
             <a
               href={project.githubUrl}
               target="_blank"
               rel="noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="px-3 py-1 rounded-full text-xs font-mono bg-black/[0.03] dark:bg-white/[0.04] border border-black/[0.06] dark:border-white/[0.08] text-apple-secondary dark:text-apple-darkSecondary hover:text-apple-text dark:hover:text-apple-darkText flex items-center gap-1.5 transition"
+              className="px-3 py-1.5 rounded-full text-xs font-mono bg-black/[0.03] dark:bg-white/[0.04] border border-black/[0.06] dark:border-white/[0.08] text-apple-secondary dark:text-apple-darkSecondary hover:text-apple-text dark:hover:text-apple-darkText flex items-center gap-1.5 transition cursor-pointer"
             >
               <span>Repository</span>
               <ExternalLink className="w-3 h-3" />
@@ -305,7 +305,7 @@ export function TiltProjectCard({ project, idx, colSpan, onOpenProject }: TiltPr
               target="_blank"
               rel="noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="px-3 py-1 rounded-full text-xs font-mono bg-apple-indigo text-white font-semibold flex items-center gap-1.5 shadow-sm hover:opacity-90 transition"
+              className="px-3 py-1.5 rounded-full text-xs font-mono bg-apple-indigo text-white font-semibold flex items-center gap-1.5 shadow-sm hover:opacity-90 transition cursor-pointer"
             >
               <span>Live App</span>
               <ExternalLink className="w-3 h-3" />

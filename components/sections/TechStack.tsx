@@ -35,31 +35,31 @@ export function TechStack({ onOpenProject }: TechStackProps) {
     : [];
 
   return (
-    <section id="stack" className="py-24 px-6 sm:px-8 max-w-6xl mx-auto scroll-mt-20">
+    <section id="stack" className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto scroll-mt-20">
       {/* Header */}
       <MotionReveal>
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-black/[0.06] dark:border-white/[0.08]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 sm:pb-12 border-b border-black/[0.06] dark:border-white/[0.08]">
           <div>
             <span className="text-xs font-mono uppercase tracking-[0.2em] text-apple-indigo font-semibold">
               05 / Technology Architecture
             </span>
-            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-apple-text dark:text-apple-darkText mt-3">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-apple-text dark:text-apple-darkText mt-3">
               Tools of the craft.
             </h2>
-            <p className="mt-3 text-base text-apple-secondary dark:text-apple-darkSecondary max-w-2xl font-normal leading-relaxed">
+            <p className="mt-3 text-sm sm:text-base text-apple-secondary dark:text-apple-darkSecondary max-w-2xl font-normal leading-relaxed">
               Every tool chosen for reliability, deterministic execution, and developer velocity. Click or hover any technology to inspect production implementation details.
             </p>
           </div>
 
           {/* Category Filter Pills */}
-          <div className="flex flex-wrap items-center gap-1.5 p-1 rounded-full apple-glass shrink-0 shadow-apple-subtle">
+          <div className="flex items-center gap-1 sm:gap-1.5 p-1 rounded-2xl sm:rounded-full apple-glass shrink-0 shadow-apple-subtle overflow-x-auto scrollbar-none max-w-full">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => {
                   setActiveCategory(cat.id);
                 }}
-                className={`px-3 py-1.5 rounded-full text-xs font-mono transition-all flex items-center gap-1.5 ${
+                className={`px-3 py-1.5 rounded-full text-xs font-mono transition-all flex items-center gap-1.5 shrink-0 cursor-pointer ${
                   activeCategory === cat.id
                     ? 'bg-apple-indigo text-white font-bold shadow-md shadow-apple-indigo/20'
                     : 'text-apple-secondary dark:text-apple-darkSecondary hover:text-apple-text dark:hover:text-apple-darkText'
@@ -72,9 +72,9 @@ export function TechStack({ onOpenProject }: TechStackProps) {
         </div>
       </MotionReveal>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-12 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 mt-8 sm:mt-12 items-start">
         {/* Left: Structured Grid of Technologies */}
-        <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-3.5">
+        <div className="lg:col-span-7 grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3.5">
           {filteredTechs.map((tech) => {
             const isSelected = selectedTech?.id === tech.id;
 
@@ -83,28 +83,28 @@ export function TechStack({ onOpenProject }: TechStackProps) {
                 key={tech.id}
                 onClick={() => setSelectedTech(tech)}
                 onMouseEnter={() => setSelectedTech(tech)}
-                className={`p-4 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between min-h-[110px] ${
+                className={`p-3.5 sm:p-4 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between min-h-[105px] sm:min-h-[110px] ${
                   isSelected
                     ? 'apple-glass-pill border-apple-indigo/60 shadow-apple-float bg-apple-indigo/[0.04] scale-[1.02]'
                     : 'apple-glass border-black/[0.05] dark:border-white/[0.08] hover:border-black/[0.15] dark:hover:border-white/[0.2] hover:-translate-y-0.5'
                 }`}
               >
                 <div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-mono text-apple-secondary dark:text-apple-darkSecondary uppercase">
+                  <div className="flex items-center justify-between gap-1">
+                    <span className="text-[10px] font-mono text-apple-secondary dark:text-apple-darkSecondary uppercase truncate">
                       {tech.category}
                     </span>
-                    <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-black/[0.03] dark:bg-white/[0.06] text-apple-indigo font-medium">
+                    <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-black/[0.03] dark:bg-white/[0.06] text-apple-indigo font-medium shrink-0">
                       {tech.level}
                     </span>
                   </div>
 
-                  <h3 className="font-bold text-sm sm:text-base text-apple-text dark:text-apple-darkText mt-2 font-mono">
+                  <h3 className="font-bold text-sm sm:text-base text-apple-text dark:text-apple-darkText mt-1.5 sm:mt-2 font-mono truncate">
                     {tech.name}
                   </h3>
                 </div>
 
-                <div className="mt-3 flex items-center justify-between text-[11px] font-mono text-apple-secondary dark:text-apple-darkSecondary">
+                <div className="mt-2.5 sm:mt-3 flex items-center justify-between text-[11px] font-mono text-apple-secondary dark:text-apple-darkSecondary">
                   <span>{tech.relatedProjectIds.length} projects</span>
                   {isSelected && <span className="text-apple-indigo font-bold">Selected</span>}
                 </div>
@@ -114,8 +114,8 @@ export function TechStack({ onOpenProject }: TechStackProps) {
         </div>
 
         {/* Right: Selected Technology Detail & Connected Projects */}
-        <div className="lg:col-span-5 sticky top-28">
-          <div className="p-7 rounded-3xl apple-glass shadow-apple-card border border-black/[0.08] dark:border-white/[0.12]">
+        <div className="lg:col-span-5 lg:sticky lg:top-28 w-full">
+          <div className="p-5 sm:p-7 rounded-3xl apple-glass shadow-apple-card border border-black/[0.08] dark:border-white/[0.12]">
             {selectedTech ? (
               <div className="space-y-6">
                 <div className="flex items-center justify-between pb-4 border-b border-black/[0.06] dark:border-white/[0.08]">

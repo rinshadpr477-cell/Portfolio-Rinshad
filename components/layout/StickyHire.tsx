@@ -34,14 +34,16 @@ export function StickyHire() {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 animate-in fade-in slide-in-from-bottom-4 duration-300">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 animate-in fade-in slide-in-from-bottom-4 duration-300">
       <a
         href="#contact"
-        className="px-4 py-2.5 rounded-full font-mono text-xs font-semibold apple-glass-pill shadow-apple-float text-apple-text dark:text-apple-darkText hover:text-apple-indigo active:scale-95 transition-all flex items-center gap-2 group"
+        aria-label="Available for hire - contact Rinshad"
+        className="px-3.5 py-2.5 sm:px-4 sm:py-2.5 rounded-full font-mono text-xs font-semibold apple-glass-pill shadow-apple-float text-apple-text dark:text-apple-darkText hover:text-apple-indigo active:scale-95 transition-all flex items-center gap-2 group border border-black/[0.08] dark:border-white/[0.14]"
       >
-        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-        <span>Available for Hire</span>
-        <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+        <span className="hidden xs:inline">Available for Hire</span>
+        <span className="xs:hidden font-medium">Hire</span>
+        <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
       </a>
     </div>
   );

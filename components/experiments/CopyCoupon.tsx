@@ -29,20 +29,20 @@ export function CopyCoupon() {
   };
 
   return (
-    <div className="p-8 rounded-2xl apple-glass flex flex-col items-center justify-center min-h-[220px]">
-      <div className="text-[11px] font-mono text-apple-secondary dark:text-apple-darkSecondary mb-4 uppercase tracking-wider">
+    <div className="p-4 sm:p-8 rounded-2xl apple-glass flex flex-col items-center justify-center min-h-[200px] sm:min-h-[220px]">
+      <div className="text-[10px] sm:text-[11px] font-mono text-apple-secondary dark:text-apple-darkSecondary mb-3 sm:mb-4 uppercase tracking-wider text-center">
         Cryptographic Key & Clipboard Copy
       </div>
 
-      <div className="w-full max-w-sm flex items-center justify-between p-3 rounded-2xl bg-black/[0.03] dark:bg-white/[0.04] border border-black/[0.06] dark:border-white/[0.08] shadow-inner">
-        <div className="flex items-center gap-2 font-mono text-xs text-apple-text dark:text-apple-darkText truncate mr-2">
+      <div className="w-full max-w-sm flex items-center justify-between p-2.5 sm:p-3 rounded-2xl bg-black/[0.03] dark:bg-white/[0.04] border border-black/[0.06] dark:border-white/[0.08] shadow-inner">
+        <div className="flex items-center gap-2 font-mono text-[11px] sm:text-xs text-apple-text dark:text-apple-darkText truncate mr-2">
           <Terminal className="w-4 h-4 text-apple-indigo shrink-0" />
           <span className="truncate">{token}</span>
         </div>
 
         <button
           onClick={copyToClipboard}
-          className={`px-4 py-2 rounded-xl font-mono text-xs font-semibold flex items-center gap-1.5 shrink-0 transition-all ${
+          className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl font-mono text-xs font-semibold flex items-center gap-1.5 shrink-0 transition-all cursor-pointer ${
             copied
               ? 'bg-emerald-500 text-white shadow-md scale-105'
               : 'bg-apple-indigo text-white hover:opacity-90 shadow-sm'

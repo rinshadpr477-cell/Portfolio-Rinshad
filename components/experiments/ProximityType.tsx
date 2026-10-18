@@ -40,13 +40,13 @@ export function ProximityType() {
       ref={containerRef}
       onPointerMove={handlePointerMove}
       onPointerLeave={handlePointerLeave}
-      className="p-8 rounded-2xl bg-studio-surface border border-studio-border flex flex-col items-center justify-center min-h-[220px] select-none cursor-crosshair overflow-hidden relative"
+      className="p-4 sm:p-8 rounded-2xl bg-studio-surface border border-studio-border flex flex-col items-center justify-center min-h-[200px] sm:min-h-[220px] select-none cursor-crosshair overflow-hidden relative"
     >
-      <div className="text-[11px] font-mono text-studio-muted mb-4 uppercase tracking-wider">
+      <div className="text-[10px] sm:text-[11px] font-mono text-studio-muted mb-3 sm:mb-4 uppercase tracking-wider text-center">
         Hover / touch across letters to displace font weight & scale
       </div>
 
-      <div className="flex flex-wrap justify-center items-center gap-[2px] sm:gap-1 max-w-full">
+      <div className="flex flex-wrap justify-center items-center gap-[1px] sm:gap-1 max-w-full">
         {text.split('').map((char, i) => (
           <span
             key={i}
@@ -57,7 +57,7 @@ export function ProximityType() {
               color: charWeights[i] > 550 ? '#8B91FF' : 'inherit',
               transition: 'transform 0.15s ease-out, font-weight 0.12s ease-out, color 0.15s ease',
             }}
-            className="inline-block text-xl sm:text-3xl font-mono tracking-tight"
+            className="inline-block text-sm xs:text-base sm:text-2xl md:text-3xl font-mono tracking-tight"
           >
             {char === '·' ? ' • ' : char}
           </span>

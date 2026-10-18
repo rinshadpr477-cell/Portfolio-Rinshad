@@ -52,33 +52,33 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="py-24 px-6 sm:px-8 max-w-6xl mx-auto scroll-mt-20">
+    <section id="about" className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto scroll-mt-20">
       {/* Header */}
       <MotionReveal>
-        <div className="pb-12 border-b border-black/[0.06] dark:border-white/[0.08]">
+        <div className="pb-8 sm:pb-12 border-b border-black/[0.06] dark:border-white/[0.08]">
           <span className="text-xs font-mono uppercase tracking-[0.2em] text-apple-indigo font-semibold">
             06 / About Rinshad
           </span>
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-apple-text dark:text-apple-darkText mt-3">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-apple-text dark:text-apple-darkText mt-3">
             Engineered for longevity.
           </h2>
-          <p className="mt-3 text-base text-apple-secondary dark:text-apple-darkSecondary max-w-2xl font-normal leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-apple-secondary dark:text-apple-darkSecondary max-w-2xl font-normal leading-relaxed">
             I am a software engineer focused on building useful web products, reliable distributed backends, and responsive frontend experiences.
           </p>
         </div>
       </MotionReveal>
 
       {/* Main Grid: Photo Glass Enclosure + Engineering Narrative */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-12 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 mt-8 sm:mt-12 items-start">
         {/* Left: Verified Profile Card */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.7 }}
-          className="lg:col-span-5 relative sticky top-28"
+          className="lg:col-span-5 relative lg:sticky lg:top-28 w-full max-w-md mx-auto lg:max-w-none"
         >
-          <div className="rounded-3xl apple-glass p-4 shadow-apple-card relative overflow-hidden group">
+          <div className="rounded-3xl apple-glass p-3.5 sm:p-4 shadow-apple-card relative overflow-hidden group">
             {/* Real verified picture */}
             <div className="aspect-[4/5] rounded-2xl overflow-hidden relative border border-black/[0.06] dark:border-white/[0.08] bg-black/[0.03] dark:bg-white/[0.03]">
               <img
@@ -88,8 +88,8 @@ export function About() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
 
-              <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl apple-glass-pill shadow-apple-subtle">
-                <div className="font-bold text-base text-apple-text dark:text-apple-darkText font-mono">Rinshad PR</div>
+              <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 p-3.5 sm:p-4 rounded-2xl apple-glass-pill shadow-apple-subtle">
+                <div className="font-bold text-sm sm:text-base text-apple-text dark:text-apple-darkText font-mono">Rinshad PR</div>
                 <div className="text-xs text-apple-secondary dark:text-apple-darkSecondary flex items-center gap-1.5 mt-0.5 font-sans">
                   <MapPin className="w-3.5 h-3.5 text-apple-indigo" />
                   <span>Calicut, Kerala, India</span>
@@ -98,7 +98,7 @@ export function About() {
             </div>
 
             {/* Quick Profiles links */}
-            <div className="mt-4 flex items-center justify-between px-2 pt-1">
+            <div className="mt-3 sm:mt-4 flex items-center justify-between px-2 pt-1">
               <span className="text-xs font-mono text-apple-secondary dark:text-apple-darkSecondary">Direct Channels</span>
               <div className="flex items-center gap-2">
                 <a
@@ -137,14 +137,14 @@ export function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.7 }}
-          className="lg:col-span-7 space-y-10"
+          className="lg:col-span-7 space-y-8 sm:space-y-10 w-full"
         >
           {/* Engineering Focus Pillars */}
-          <div className="p-6 rounded-3xl apple-glass shadow-apple-subtle space-y-3">
+          <div className="p-5 sm:p-6 rounded-3xl apple-glass shadow-apple-subtle space-y-3">
             <h3 className="text-xs font-mono text-apple-indigo uppercase tracking-wider font-semibold">
               Primary Engineering Focus
             </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-1">
+            <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-2 pt-1">
               {capabilities.map((cap) => (
                 <div
                   key={cap}
@@ -167,14 +167,14 @@ export function About() {
               {experiences.map((exp, idx) => (
                 <div
                   key={idx}
-                  className="p-6 rounded-3xl apple-glass shadow-apple-card space-y-3"
+                  className="p-5 sm:p-6 rounded-2xl sm:rounded-3xl apple-glass shadow-apple-card space-y-3"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                     <div>
-                      <h3 className="font-bold text-base text-apple-text dark:text-apple-darkText">{exp.role}</h3>
+                      <h3 className="font-bold text-sm sm:text-base text-apple-text dark:text-apple-darkText">{exp.role}</h3>
                       <div className="text-xs text-apple-indigo font-mono font-medium">{exp.company}</div>
                     </div>
-                    <span className="text-xs font-mono text-apple-secondary dark:text-apple-darkSecondary flex items-center gap-1.5 self-start sm:self-auto">
+                    <span className="text-[11px] sm:text-xs font-mono text-apple-secondary dark:text-apple-darkSecondary flex items-center gap-1.5 self-start sm:self-auto">
                       <Calendar className="w-3.5 h-3.5" />
                       <span>{exp.period} · {exp.location}</span>
                     </span>
@@ -182,8 +182,8 @@ export function About() {
 
                   <ul className="space-y-2 pt-2 border-t border-black/[0.04] dark:border-white/[0.06]">
                     {exp.highlights.map((h, i) => (
-                      <li key={i} className="text-xs sm:text-sm text-apple-secondary dark:text-apple-darkSecondary leading-relaxed flex items-start gap-2.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-apple-indigo mt-2 shrink-0" />
+                      <li key={i} className="text-xs sm:text-sm text-apple-secondary dark:text-apple-darkSecondary leading-relaxed flex items-start gap-2 sm:gap-2.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-apple-indigo mt-1.5 sm:mt-2 shrink-0" />
                         <span>{h}</span>
                       </li>
                     ))}
@@ -200,7 +200,7 @@ export function About() {
               <span>Education</span>
             </div>
 
-            <div className="p-6 rounded-3xl apple-glass shadow-apple-subtle space-y-2">
+            <div className="p-5 sm:p-6 rounded-2xl sm:rounded-3xl apple-glass shadow-apple-subtle space-y-2">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                 <h3 className="font-bold text-sm sm:text-base text-apple-text dark:text-apple-darkText">
                   {education.degree}

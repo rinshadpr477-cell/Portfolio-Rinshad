@@ -14,6 +14,7 @@ dist-ssr
 out
 *.local
 legacy_vite_backup
+*.tsbuildinfo
 
 # Editor directories and files
 .vscode/*

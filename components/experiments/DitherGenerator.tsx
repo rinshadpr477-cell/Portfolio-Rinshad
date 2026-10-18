@@ -21,14 +21,14 @@ filter: contrast(${density}%);`;
   };
 
   return (
-    <div className="p-6 rounded-2xl bg-studio-surface border border-studio-border flex flex-col justify-between min-h-[220px]">
-      <div className="flex items-center justify-between mb-4">
-        <span className="text-[11px] font-mono text-studio-muted uppercase tracking-wider">
+    <div className="p-4 sm:p-6 rounded-2xl bg-studio-surface border border-studio-border flex flex-col justify-between min-h-[220px]">
+      <div className="flex flex-col xs:flex-row xs:items-center justify-between gap-2 mb-4">
+        <span className="text-[10px] sm:text-[11px] font-mono text-studio-muted uppercase tracking-wider">
           Procedural Dither & Gradient Canvas
         </span>
         <button
           onClick={copyCSS}
-          className="flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-mono border border-studio-border bg-studio-elevated text-studio-text hover:border-studio-accent transition"
+          className="self-start xs:self-auto flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-mono border border-studio-border bg-studio-elevated text-studio-text hover:border-studio-accent transition cursor-pointer"
         >
           {copied ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
           <span>{copied ? 'Copied' : 'Copy CSS'}</span>
@@ -37,7 +37,7 @@ filter: contrast(${density}%);`;
 
       {/* Live Preview Area */}
       <div
-        className="h-28 rounded-xl border border-studio-border overflow-hidden relative flex items-center justify-center shadow-inner"
+        className="h-24 sm:h-28 rounded-xl border border-studio-border overflow-hidden relative flex items-center justify-center shadow-inner"
         style={{
           background: `radial-gradient(circle at 50% 50%, ${colorB} 0%, ${colorA} 100%)`,
         }}
@@ -49,13 +49,13 @@ filter: contrast(${density}%);`;
             backgroundSize: `${Math.max(4, Math.round(20 - density * 0.15))}px ${Math.max(4, Math.round(20 - density * 0.15))}px`,
           }}
         />
-        <span className="relative z-10 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-xs font-mono text-white border border-white/20">
+        <span className="relative z-10 px-2.5 sm:px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[11px] sm:text-xs font-mono text-white border border-white/20">
           Dither Matrix Density: {density}%
         </span>
       </div>
 
       {/* Controls */}
-      <div className="grid grid-cols-3 gap-3 mt-4 items-center">
+      <div className="grid grid-cols-3 gap-2 sm:gap-3 mt-4 items-center">
         <div>
           <label className="text-[10px] font-mono text-studio-muted block mb-1">Color 1</label>
           <input

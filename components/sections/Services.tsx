@@ -22,24 +22,24 @@ export function Services({ onPreselectService }: ServicesProps) {
   };
 
   return (
-    <section id="services" className="py-24 px-6 sm:px-8 max-w-6xl mx-auto scroll-mt-20">
+    <section id="services" className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto scroll-mt-20">
       {/* Header */}
       <MotionReveal>
-        <div className="pb-12 border-b border-black/[0.06] dark:border-white/[0.08]">
+        <div className="pb-8 sm:pb-12 border-b border-black/[0.06] dark:border-white/[0.08]">
           <span className="text-xs font-mono uppercase tracking-[0.2em] text-apple-indigo font-semibold">
             03 / Services
           </span>
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-apple-text dark:text-apple-darkText mt-3">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-apple-text dark:text-apple-darkText mt-3">
             Tailored engineering capabilities.
           </h2>
-          <p className="mt-3 text-base text-apple-secondary dark:text-apple-darkSecondary max-w-2xl font-normal leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-apple-secondary dark:text-apple-darkSecondary max-w-2xl font-normal leading-relaxed">
             Focused engineering partnerships for founders and engineering teams. Clear technical scope, weekly demonstrations, and production-ready handoff.
           </p>
         </div>
       </MotionReveal>
 
       {/* Services Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-8 sm:mt-12">
         {SERVICES.map((service, idx) => (
           <motion.div
             key={service.id}
@@ -48,7 +48,7 @@ export function Services({ onPreselectService }: ServicesProps) {
             viewport={{ once: true, margin: '-30px' }}
             transition={{ duration: 0.6, delay: idx * 0.12 }}
             whileHover={{ y: -6, transition: { duration: 0.25 } }}
-            className="rounded-3xl apple-glass p-8 flex flex-col justify-between shadow-apple-card hover:shadow-apple-float transition-all relative group"
+            className="rounded-3xl apple-glass p-5 sm:p-7 md:p-8 flex flex-col justify-between shadow-apple-card hover:shadow-apple-float transition-all relative group"
           >
             <div>
               {/* Header Badge */}
